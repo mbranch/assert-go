@@ -15,5 +15,4 @@
 .idea
 .vscode
 
-# Don't track vendored files, as this is a library
-vendor
+bin/

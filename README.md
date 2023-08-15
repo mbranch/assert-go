@@ -1,10 +1,9 @@
 # assert-go
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/mbranch/assert-go.svg)](https://pkg.go.dev/github.com/mbranch/assert-go)
 [![Go Report Card](https://goreportcard.com/badge/github.com/mbranch/assert-go)](https://goreportcard.com/report/github.com/mbranch/assert-go)
-[![GoDoc](https://godoc.org/net/http?status.svg)](https://godoc.org/github.com/mbranch/assert-go)
-[![go.dev](https://img.shields.io/badge/go.dev-pkg-007d9c.svg?style=flat)](https://pkg.go.dev/github.com/mbranch/assert-go)
 
-Package assert simplifies writing test assertions.
+Package assert simplifies writing test assertions[^1].
 
 Output will contain a helpful diff rendered using as well as the source code of
 the expression being tested. For example, if you call `assert.Equal(t, car.Name, "Porsche")`, the error message will include "car.Name".
@@ -15,9 +14,9 @@ example, to indicate that unexported fields should be ignored on `MyType`, you
 can use:
 
 ```go
- assert.RegisterOptions(
-     cmpopts.IgnoreUnexported(MyType{}),
- )
+assert.RegisterOptions(
+  cmpopts.IgnoreUnexported(MyType{}),
+)
 ```
 
 See the [go-cmp docs](https://godoc.org/github.com/google/go-cmp/cmp) for more
@@ -40,3 +39,7 @@ func Test(t *testing.T) {
     //          +: "Bob"
 }
 ```
+
+[^1]:
+    This repo is a copy (not a fork) of [github.com/deliveroo/assert-go](https://github.com/deliveroo/assert-go) which was
+    deleted. It will be maintained separately from the original repo.
